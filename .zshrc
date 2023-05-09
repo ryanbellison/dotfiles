@@ -1,3 +1,5 @@
+export PATH="/opt/homebrew/bin:$PATH"
+
 # Load completion config
 source $HOME/.zsh/completion.zsh
 
@@ -5,13 +7,17 @@ source $HOME/.zsh/completion.zsh
 autoload -Uz compinit
 
 # Cache completion if nothing changed - faster startup time
-typeset -i updated_at=$(date +'%j' -r ~/.zcompdump 2>/dev/null || stat -f '%Sm' -t '%j' ~/.zsh/.zcompdump 2>/dev/null)
+typeset -i updated_at=$(date +'%j' -r ~/.zcompdump 2>/dev/null || stat -f '%Sm' -t '%j' ~/.zcompdump 2>/dev/null)
 if [ $(date +'%j') != $updated_at ]; then
   compinit -i
 else
+  compinit -C -i
+fi
 
-# Save history so we get auto suggestions
-HISTFILE=$HOME/.zsh/.zsh_history
+# Enhanced form of menu completion called `menu selection'
+zmodload -i zsh/complist
+
+HISTFILE=$HOME/.zsh_history
 HISTSIZE=100000
 SAVEHIST=$HISTSIZE
 
@@ -31,9 +37,20 @@ zstyle ':completion:*' group-name '' # group results by category
 zstyle ':completion:::::' completer _expand _complete _ignored _approximate # enable approximate matches for completion
 
 eval "$(starship init zsh)"
-source /Users/rellison/.zsh/fast-syntax-highlighting/F-Sy-H.plugin.zsh
-source /Users/rellison/.zsh/completion.zsh
-source /Users/rellison/.zsh/zsh-autosuggestions/zsh-autosuggestions.zsh
-source /Users/rellison/.zsh/history.zsh
-source /Users/rellison/.zsh/key-bindings.zsh
-source /Users/rellison/.zsh/aliases.zsh
+source /Users/(user)/.zsh/fast-syntax-highlighting/F-Sy-H.plugin.zsh 
+source /Users/(user)/.zsh/completion.zsh
+source /Users/(user)/.zsh/zsh-autosuggestions/zsh-autosuggestions.zsh
+source /Users/(user)/.zsh/history.zsh
+source /Users/(user)/.zsh/key-bindings.zsh
+source /Users/(user)/.zsh/aliases.zsh
+
+
+# git clone https://github.com/zdharma/fast-syntax-highlighting.git
+# cd ~/.zsh && wget https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/lib/completion.zsh
+# cd ~/.zsh && git clone git@github.com:zsh-users/zsh-autosuggestions.git
+# cd ~/.zsh && wget https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/lib/history.zsh
+# cd ~/.zsh && wget https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/lib/key-bindings.zsh
+# touch aliases.zsh 
+
+
+
