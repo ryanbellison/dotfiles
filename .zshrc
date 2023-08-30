@@ -45,12 +45,4 @@ source /Users/(user)/.zsh/key-bindings.zsh
 source /Users/(user)/.zsh/aliases.zsh
 
 
-# git clone https://github.com/zdharma/fast-syntax-highlighting.git
-# cd ~/.zsh && wget https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/lib/completion.zsh
-# cd ~/.zsh && git clone git@github.com:zsh-users/zsh-autosuggestions.git
-# cd ~/.zsh && wget https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/lib/history.zsh
-# cd ~/.zsh && wget https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/lib/key-bindings.zsh
-# touch aliases.zsh 
-
-
 
