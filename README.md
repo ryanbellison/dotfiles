@@ -82,7 +82,12 @@ echo 'eval "$(starship init zsh)"' >> ~/.zshrc
   * Enable Minimize windows into the application icon
   * Disable Show recent applications in Dock    
 * Mouse
-  * Disable Natural Scrolling 
+  * Disable Natural Scrolling
+* Display
+  * Night Shift
+    * 7:00 pm - 7:00 am
+    * More Warm
+  
 
 ## Chrome
 * Extensions
